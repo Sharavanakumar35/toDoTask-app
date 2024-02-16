@@ -29,6 +29,7 @@ const App = () => {
     const updatedList = [...MyToDoList];
     const index = updatedList.findIndex(todo => todo.id === id);
     updatedList.splice(index, 1);
+    openEdit(-1);
     setMyToDoList(updatedList);
   };
 
