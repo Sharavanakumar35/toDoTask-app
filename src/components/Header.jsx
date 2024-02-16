@@ -34,7 +34,7 @@ const Header = ({ length, addToDoList }) => {
         // Reset errors
         setErrors({});
 
-        inputs.status = 'Incomplete';
+        inputs.status = 'InComplete';
         inputs.id = length;
         addToDoList(inputs);
     };

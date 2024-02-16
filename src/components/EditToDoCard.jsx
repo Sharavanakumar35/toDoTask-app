@@ -4,7 +4,6 @@ import * as Icon from 'react-bootstrap-icons';
 const EditToDoCard = ({MyToDoList, id, editToDoList, onClose}) => {
 
     const editableCard = MyToDoList.find(item => item.id === id);
-   
 
     const [inputs, setInputs] = useState({
         name: editableCard.name,
