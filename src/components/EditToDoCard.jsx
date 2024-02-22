@@ -22,6 +22,10 @@ const EditToDoCard = ({MyToDoList, id, editToDoList, onClose}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         editToDoList(inputs, id);
+
+        setTimeout(() => {
+            onClose(-1);
+        }, 1000)
     }
     return (
         <div className='my-4 editToDoCard position-relative'>
@@ -66,7 +70,7 @@ const EditToDoCard = ({MyToDoList, id, editToDoList, onClose}) => {
                         <option value="InComplete">Not Completed</option>
                     </select>
 
-                <input type="submit" value="Submit" className="btn btn-todo mt-4" />
+                <input type="submit" value="Update" className="btn btn-todo mt-4" />
             </form>
         </div>
     );

@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 const Header = ({ length, addToDoList }) => {
     const [inputs, setInputs] = useState({});
     const [errors, setErrors] = useState({});
+    const [idCounter, setIdCounter] = useState(length);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
         setInputs((prevInputs) => ({ ...prevInputs, [name]: value }));
         setErrors((prevErrors) => ({ ...prevErrors, [name]: value.trim() ? '' : 'This field is required' }));
+
     };
 
     const handleSubmit = (event) => {
@@ -35,8 +37,11 @@ const Header = ({ length, addToDoList }) => {
         setErrors({});
 
         inputs.status = 'InComplete';
-        inputs.id = length;
+        setIdCounter(prev => prev + 1);
+        console.log(inputs);
+        inputs.id = idCounter;
         addToDoList(inputs);
+        setInputs({});
     };
 
     return (
